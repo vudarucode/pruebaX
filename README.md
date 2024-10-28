@@ -57,14 +57,6 @@ Sigue estos pasos para configurar el proyecto:
     php artisan migrate
     ```
 
-6. **Llena la base de datos con datos de prueba (opcional):**
-
-    Si has creado un seeder para generar datos iniciales, puedes ejecutarlo con:
-
-    ```bash
-    php artisan db:seed
-    ```
-
 ## Ejecución del Proyecto
 
 1. **Inicia el servidor de desarrollo de Laravel:**
