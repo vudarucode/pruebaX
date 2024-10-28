@@ -1,66 +1,97 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este proyecto es un sistema de gestión desarrollado en Laravel que permite administrar registros de departamentos, niveles de educación y empleados, así como generar un reporte específico de empleados basado en la suma de los salarios en cada departamento.
 
-## About Laravel
+## Requisitos
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   PHP >= 8.0
+-   Composer
+-   MySQL o cualquier base de datos compatible con Laravel
+-   Node.js (opcional, para compilar assets)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Instalación
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Sigue estos pasos para configurar el proyecto:
 
-## Learning Laravel
+1. **Clona el repositorio:**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+    ```bash
+    git clone https://github.com/tu-usuario/tu-repositorio.git
+    cd tu-repositorio
+    ```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+2. **Instala las dependencias de PHP con Composer:**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    ```bash
+    composer install
+    ```
 
-## Laravel Sponsors
+3. **Configura el archivo `.env`:**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    - Copia el archivo de entorno de ejemplo:
 
-### Premium Partners
+        ```bash
+        cp .env.example .env
+        ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+    - Edita el archivo `.env` y configura la base de datos:
 
-## Contributing
+        ```
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=tu_base_datos
+        DB_USERNAME=tu_usuario
+        DB_PASSWORD=tu_contraseña
+        ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. **Genera la clave de la aplicación:**
 
-## Code of Conduct
+    ```bash
+    php artisan key:generate
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5. **Ejecuta las migraciones para crear las tablas:**
 
-## Security Vulnerabilities
+    ```bash
+    php artisan migrate
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+6. **Llena la base de datos con datos de prueba (opcional):**
 
-## License
+    Si has creado un seeder para generar datos iniciales, puedes ejecutarlo con:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    ```bash
+    php artisan db:seed
+    ```
+
+## Ejecución del Proyecto
+
+1. **Inicia el servidor de desarrollo de Laravel:**
+
+    ```bash
+    php artisan serve
+    ```
+
+2. **Accede a la aplicación en tu navegador:**
+
+    Visita [http://localhost:8000](http://localhost:8000) para ver la aplicación en funcionamiento.
+
+## Características
+
+-   **CRUD de Departamentos:** Permite crear, leer, actualizar y eliminar registros de departamentos.
+-   **CRUD de Niveles de Educación:** Permite gestionar los niveles de educación.
+-   **CRUD de Empleados:** Permite administrar los registros de empleados.
+-   **Reporte de Empleados:** Genera un reporte de empleados que trabajan en departamentos donde la suma de los salarios supera 250,000.
+
+## Dependencias
+
+Este proyecto utiliza las siguientes dependencias principales:
+
+-   Laravel
+-   Bootstrap 5 (para el diseño de la interfaz)
+-   MySQL (o cualquier base de datos compatible)
+
+## Contacto
+
+Si tienes preguntas o necesitas ayuda con el proyecto, puedes contactarme en [vudarucode@hotmail.com](mailto:vudarucode@hotmail.com).
