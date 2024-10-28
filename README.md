@@ -5,7 +5,7 @@ Este proyecto es un sistema de gestión desarrollado en Laravel que permite admi
 ## Requisitos
 
 -   PHP >= 8.0
--   Composer
+-   Composer 2.4.1
 -   MySQL o cualquier base de datos compatible con Laravel
 -   Node.js (opcional, para compilar assets)
 
